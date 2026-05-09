@@ -17,6 +17,9 @@ public:
     string getModelNo() {
         return this->modelNo;
     }
+    virtual void showInfo() {
+        cout<<"Model No : "<< getModelNo() << endl;
+    }
 };
 class NvidiaGPU : public GraphicCard {
 private:
@@ -27,7 +30,7 @@ public:
     }
 
     void showInfo() {
-        cout<<"Model No : "<< getModelNo() << endl;
+        GraphicCard::showInfo();
         cout<< " Nvidia V RAm size is : " << vRamSize <<endl;
     }
 };
@@ -41,7 +44,7 @@ public:
     }
 
     void showInfo() {
-        cout<< "Model No : " << getModelNo()<<endl;
+        GraphicCard::showInfo();
         cout<< "AMD sd Ram size" << sdRam<<endl;
     }
 };
